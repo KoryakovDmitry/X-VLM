@@ -262,7 +262,8 @@ class XVLMBase(nn.Module):
         self.vision_encoder, vision_width = build_vision_encoder(config, load_params=load_vision_params)
 
         self.text_encoder, init_params = build_text_encoder(config, vision_width=vision_width, load_text_params=load_text_params,
-                                                            use_mlm_loss=use_mlm_loss,
+                                                            # use_mlm_loss=use_mlm_loss,
+                                                            use_mlm_loss=True,
                                                             config_text=config_text)  # text & cross-modal
         self.init_params.extend(init_params)
 
