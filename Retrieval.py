@@ -328,7 +328,7 @@ def main(args, config):
                         'config': config,
                         # 'epoch': epoch,
                     }
-                    torch.save(save_obj, os.path.join(args.output_dir, 'checkpoint_best.pth'))
+                    torch.save(save_obj, os.path.join(args.output_dir, f'checkpoint_best_eph{epoch}.pth'))
                     best = test_result['r_mean']
                     best_epoch = epoch
 
