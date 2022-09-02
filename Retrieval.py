@@ -227,7 +227,7 @@ def main(args, config):
 
     print("Creating model", flush=True)
     model = XVLM(config=config)
-    model.load_pretrained(args.checkpoint, config, is_eval=args.evaluate)
+    # model.load_pretrained(args.checkpoint, config, is_eval=args.evaluate)
     model = model.to(device)
     print("### Total Params: ", sum(p.numel() for p in model.parameters() if p.requires_grad))
 
