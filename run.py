@@ -242,6 +242,9 @@ def run(args):
         args.config = 'configs/Retrieval_flickr.yaml'
         run_retrieval(args)
 
+    elif args.task == 'agro':
+        run_retrieval(args)
+
     elif args.task == 'vqa':
         assert os.path.exists("images/coco") and os.path.exists("images/visualgenome")
         run_vqa(args)
