@@ -4,7 +4,9 @@ from models import XVLMBase, load_pretrained
 
 class XVLM(XVLMBase):
     def __init__(self, config):
-        super().__init__(config, load_vision_params=False, load_text_params=False,
+        super().__init__(config,
+                         load_vision_params=True,
+                         load_text_params=True,
                          use_contrastive_loss=True, use_matching_loss=True, use_mlm_loss=False, use_bbox_loss=False)
 
         self.num_attention_heads = self.text_encoder.config.num_attention_heads
